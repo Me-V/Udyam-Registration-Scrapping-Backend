@@ -4,11 +4,14 @@ import cors from 'cors'
 import aadhaarRouter from './routes/aadhaar.js'
 import panRouter from './routes/pan.js'
 import submitRouter from './routes/submit.js'
+import job from "./lib/cron.js";
+
 
 const app = express()
 const PORT = 3001;
 
 // Middleware
+job.start();
 app.use(cors())
 app.use(bodyParser.json())
 
