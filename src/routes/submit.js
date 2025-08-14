@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
     res.status(201).json(newRegistration)
   } catch (error) {
     console.error('Error saving registration:', error)
-    res.status(500).json({ error: 'Failed to save registration' })
+    res.status(400).json({ error: 'Failed to save registration' })
   }
 })
 
